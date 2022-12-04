@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Péricles Delivery | Produtos</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <script>
+        function show_content(){
+        const url = new URLSearchParams (window.location.search)
+        let  page = url.get("page")
+
+        if(page == 1){
+            document.getElementById("produto1").style.visibility = "visible"
+            document.getElementById("produto2").style.visibility = "visible"
+        }else{
+            document.getElementById("produto1").style.display = "none"
+            document.getElementById("produto2").style.display = "none"
+        } 
+        }
+        function comprar(valor){
+            window.location.href='checkout.html?valor='+valor
+        }   
+    </script>    
+</head>
+<body onload="show_content()">
+    <nav>
+        <ul>
+            <li><a href="#">A Cervejaria</a></li>
+            <li><a href="#">Nossas Cervejas</a></li>
+            <li><a href="#">Delivery</a></li>
+        </ul>
+        <div>
+            <a>
+                Meu Carrinho
+                <span class="material-symbols-outlined">
+                shopping_cart
+                </span>
+            </a>
+        </div>
+    </nav>
+    <section>
+        <img src="assets/img/cerveja.png" alt="Cervejas">
+        <p>Olá! Gostaria de te dar boas vindas à Cervejaria do Pericles. <br> Escolha a bebida que mais te agrada:</p>
+    </section>
+    <section class="produtos">
+        <div class="item" id="produto1">
+            <img src="assets/img/vinho.png" alt="Vinho">
+            <p>Vinho Tinto</p>
+            <p>R$ 80,00</p>
+            <button class="send" onclick="comprar('80,00')">Comprar</button>
+        </div>
+        <div class="item" id="produto2">
+            <img src="assets/img/heineken.png" alt="Cerveja">
+            <p>Cerveja Heineken</p>
+            <p>R$ 20,00</p>
+            <button class="send" onclick="comprar('20,00')">Comprar</button>
+        </div>
+        <div class="item" id="produto3">
+            <img src="assets/img/guarana.png" alt="Refrigerante">
+            <p>Guaraná Antártica</p>
+            <p>R$ 10,00</p>
+            <button class="send" onclick="comprar('10,00')">Comprar</button>
+        </div>
+    </section>
+    
+</body>
+</html>
